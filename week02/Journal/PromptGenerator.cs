@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 
 
 public class PromptGenerator
@@ -20,16 +19,12 @@ public class PromptGenerator
         "What is a goal you have for your professional life?"
     };
     
-    // public List<string> _prompts;
 
     public string GetRandomPrompt()
     {
         var luck = new Random();
         var question = luck.Next(_prompts.Count); 
-
-        // foreach prompt in _prompts;
-        return _prompts[question];
-    
+        return _prompts[question];    
     }
     
 }
