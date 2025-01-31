@@ -5,14 +5,14 @@ public class Word
     private string _text;
     private bool _isHidden;
 
-    // Constructor
+//! Constructor
     public Word(string text)
     {
         _text = text;
         _isHidden = false;
     }
 
-    // Methods
+//? Methods
     public void Hide()
     {
         _isHidden = true;
@@ -30,6 +30,6 @@ public class Word
 
     public string GetDisplayTextW()
     {
-        return _isHidden ? "_____" : _text;
+        return _isHidden ? "______" : _text;
     }
 }

@@ -21,6 +21,7 @@ public class Journal
 
     public void LoadFromFile (string fileToLoad)
     {
+// i added exception handler just in case of a non-existing input is entered.
         try
         {
             string [] lines = System.IO.File.ReadAllLines(fileToLoad);                    
@@ -29,7 +30,9 @@ public class Journal
             {
                 Entry loadedentries = new Entry();      
                 string[] loadedEntry = line.Split('|');
-                loadedentries._date = ("." + loadedEntry[0]); //Exceeding: i added a point to date to avoid re-saving the same entry.
+// Exceeding: i added a dot[.] to be placed before date to avoid re-saving the same entry 
+// after the file is loaded; this feature does not affect the original file.
+                loadedentries._date = ("." + loadedEntry[0]);
                 loadedentries._title = loadedEntry[1];
                 loadedentries._gottenPrompt = loadedEntry[2];
                 loadedentries._entry = loadedEntry[3];
@@ -49,6 +52,7 @@ public class Journal
         using (StreamWriter outputFile = new StreamWriter(fileToSave, true))
         {
             foreach (var entry in _entry)
+        // this condition saves all new entries, excluding those from the loaded file if it is loaded when entering a new one.
                 if (entry._date[0] != '.')
                 {
                     outputFile.WriteLine($"{entry._date}|{entry._title}|{entry._gottenPrompt}|{entry._entry}");

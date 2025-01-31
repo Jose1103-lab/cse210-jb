@@ -1,7 +1,12 @@
 using System;
 using System.IO;
 
-///Create an app that reminds or inspires users to record his experiences in a customized Journal 
+/// Objective: Create an app that reminds or inspires users to record his experiences in a customized Journal 
+/// 
+/// I added some exceeding features in the jouunal and the entry file please see the comments there.
+/// 
+/// here I added a exception handler to avoid unexpected behaviors. 
+/// 
 class Program
 {
     static void Main(string[] args)
@@ -10,7 +15,6 @@ class Program
         bool loopIsOn = true;
         Journal newEntry = new Journal();
 //* Main menu 
-
         while(loopIsOn)
         {
             try
@@ -53,18 +57,21 @@ class Program
                         Console.ReadLine();
                         break;
                     case 3:
-                        // string filename2load = "myJournal.txt"; -- I firstly created a algorythom that save and load a default filename
+                // string filename2load = "myJournal.txt"; -- I firstly created a algorithm that save and load a default filename
                         Console.WriteLine("Enter your file's name: ");
-                        string fileName2Load = Console.ReadLine();
+        // Exceeding: I added automation here to save the file as [.txt] by default it would be more user friendly
+        // so when loading the file the user doesn't have to worry about the file type, in the future I will change 
+        // it to a Json so I can easily use it with a website.
+                        string fileName2Load = (Console.ReadLine() + ".txt");
                         newEntry.LoadFromFile(fileName2Load);
                         
                         Console.Write("\nPress ENTER to continue... ");
                         Console.ReadLine();
                         break;
                     case 4:
-                        // string filename2save = "myJournal.txt";
+                // string filename2save = "myJournal.txt";
                         Console.WriteLine("Enter your new file's name: ");
-                        string fileName2Save = Console.ReadLine();
+                        string fileName2Save = (Console.ReadLine() + ".txt");
                         newEntry.SaveToFile(fileName2Save);
 
                         Console.Write("\nPress ENTER to continue... ");
