@@ -13,6 +13,7 @@ public class Journal
 
     public void DisplayAll ()
     {
+        Console.WriteLine("--- Entries ---"); 
         foreach(Entry entry in _entry)
         {
             entry.Display();

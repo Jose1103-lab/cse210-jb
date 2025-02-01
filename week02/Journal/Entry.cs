@@ -13,9 +13,8 @@ public class Entry
 
     public void Display()
     {
-// string thePrompt = _prompt.GetRandomPrompt();
-        Console.WriteLine("--- Entries ---\n" + _gottenPrompt);
-        Console.Write($"({_date}) \"{_title}\" " + _entry);
+        Console.WriteLine($"({_date}) Title: {_title} \n<> {_gottenPrompt}\n> {_entry}");
+        Console.WriteLine();
     }
     
 
