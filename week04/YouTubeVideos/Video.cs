@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
-class Video
+public class Video
 {
     private string _title;
     private string _author;
     private int _lengthInSeconds;
     private List<Comment> _comments;
 
+// Constructor
     public Video(string title, string author, int lengthInSeconds)
     {
         _title = title;
@@ -14,6 +15,8 @@ class Video
         _lengthInSeconds = lengthInSeconds;
         _comments = new List<Comment>();
     }
+
+// Methods
     public void AddComment(Comment comment)
     {
         _comments.Add(comment);
