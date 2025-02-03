@@ -6,7 +6,7 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Fractions Project.\n\n");
 
-        Fraction fraction = new Fraction(1 , 5);
+        Fraction fraction = new Fraction(3 , 21);
 
         // fraction.SetTop(15);
         // fraction.SetBottom(10);
