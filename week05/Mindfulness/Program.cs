@@ -30,21 +30,19 @@ class Program
                 {
                     case 1:
                         {
-                            ListingActivity activity = new ListingActivity("Breathing", "will guide you through a series of deep breathing exercises to help you relax and focus.", 5 );
-                            // activity.DisplayStartingMessage(); //? include this in the run function
+                            ListingActivity activity = new ListingActivity();
                             activity.Run();
-                            Console.ReadLine(); //! include this in the run function FIXME: Included here for testing purposes
                             break;
                         }
                     case 2:
                         {
-                            ReflectionActivity activity = new ReflectionActivity("Breathing", "will guide you through a series of deep breathing exercises to help you relax and focus.", 5 );
+                            ReflectionActivity activity = new ReflectionActivity();
                             activity.Run();
                             break;
                         }
                     case 3:
                         {
-                            BreathingActivity activity = new BreathingActivity("Breathing", "will guide you through a series of deep breathing exercises to help you relax and focus.", 5 );
+                            BreathingActivity activity = new BreathingActivity();
                             activity.Run();
                             break;
                         }
