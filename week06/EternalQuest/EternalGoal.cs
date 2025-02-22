@@ -11,12 +11,12 @@ public class EternalGoal : Goal{
 
         public override void RecordEvent()
         {
-
+            
         }
 
         public override bool IsComplete()
         {
-            return true; //placeholder 
+            return false; //placeholder 
         }
 
         public override string GetStringRepresentation()

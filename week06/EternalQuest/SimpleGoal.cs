@@ -11,21 +11,32 @@ public class SimpleGoal : Goal{
     }
 
         public override void RecordEvent()
-        {
-
+        {   
+            if (_isComplete)
+            {
+                Console.WriteLine($"You have already completed the goal: {_shortName}");
+            }
+            else
+            {
+                _isComplete = true;
+            }
         }
 
         public override bool IsComplete()
         {
-            return true; //placeholder 
+            return _isComplete;  
         }
 
         public override string GetStringRepresentation()
         {
-           return $"[ ] {_shortName}, {_description}";
+            if (_isComplete)
+            {
+                return $"[✓] {_shortName}, {_description}";
+            }
+            else
+            {
+                return $"[ ] {_shortName}, {_description}";
+            }
         }
-
-
-
 
 }

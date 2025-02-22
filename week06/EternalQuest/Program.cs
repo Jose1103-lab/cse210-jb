@@ -7,11 +7,7 @@ class Program
     {
         // Console.WriteLine("Hello World! This is the EternalQuest Project.");
 
-
             GoalManager gameOn = new GoalManager();
             gameOn.Start();
-
-
-
     }
 }
