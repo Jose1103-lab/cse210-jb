@@ -25,11 +25,13 @@ public class CheckListGoal : Goal
         else
         {
             _amountCompleted++;
+            Console.WriteLine($"You have completed {_amountCompleted} out of {_target} for the goal: {_shortName}");
 
             if (_amountCompleted == _target)
             {
                 Console.WriteLine($"Congratulations! You have completed the goal: {_shortName}");
-                Console.WriteLine($"You have earned {_bonus} points!");
+                _points += _bonus;
+                Console.WriteLine($"You have earned {_bonus} bonus points!");
             }
         }
     }
@@ -48,21 +50,19 @@ public class CheckListGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"{_shortName},({_description}), status: {_amountCompleted}/{_target}"; ;
+        if (IsComplete())
+        {
+            return $"[✓] {_shortName}, {_description}, status: {_amountCompleted}/{_target}";
+        }
+        else
+        {
+            return $"[ ] {_shortName}, {_description}, status: {_amountCompleted}/{_target}";
+        }
     }
 
     public override string GetStringRepresentation()
     {
-        if (IsComplete())
-        {
-            return $"[✓] {_shortName}, {_description}";
-        }
-        else
-        {
-            return $"[ ] {_shortName}, {_description}";
-        }
+        return $"Checklist Goal,{_shortName},({_description}),{_amountCompleted}/{_target},{IsComplete()},{_points},{_bonus}";
     }
-
-
 
 }

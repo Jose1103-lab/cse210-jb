@@ -14,11 +14,12 @@ public class SimpleGoal : Goal{
         {   
             if (_isComplete)
             {
-                Console.WriteLine($"You have already completed the goal: {_shortName}");
+                Console.WriteLine("You have already completed the goal");
             }
             else
             {
                 _isComplete = true;
+                Console.WriteLine("Congratulations! You have completed the goal");
             }
         }
 
@@ -29,14 +30,7 @@ public class SimpleGoal : Goal{
 
         public override string GetStringRepresentation()
         {
-            if (_isComplete)
-            {
-                return $"[✓] {_shortName}, {_description}";
-            }
-            else
-            {
-                return $"[ ] {_shortName}, {_description}";
-            }
+            return $"Simple Goal,{_shortName},{_description},{_isComplete},{_points}";
         }
 
 }

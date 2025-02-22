@@ -1,0 +1,3 @@
+0,Cyan
+Simple Goal,Testt1,Tessssst1,False,50
+Simple Goal,Test2,Tessssst2,True,15000
